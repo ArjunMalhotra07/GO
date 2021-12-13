@@ -41,9 +41,13 @@ func main() {
 	fmt.Println(b)
 
 	c := [...]int{1, 2, 3}
-	d := &a
-	b[2] = 700
+	d := &c
+	d[2] = 700
 	fmt.Println(c)
 	fmt.Println(d)
+
+	//Arrays are useful but the fixed length
+	//which has to be known at compile time definitely
+	//limits its usefulness
 
 }
