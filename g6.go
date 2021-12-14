@@ -20,5 +20,6 @@ func main() {
 	field, _ := t.FieldByName("Name")
 	//Getting a field from that type by using the Types's FieldByName method
 	fmt.Println(field.Tag)
+	//Tags can be added to struct fields to describe field
 
 }
