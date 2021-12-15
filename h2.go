@@ -33,4 +33,4 @@ func main() {
 }
 
 //Concept of short circuiting here, returnTrue test, is a func call but doesnt execute
-//coz our compiler didnt check after 1st is true
+//coz our compiler didn't check after 1st is true
