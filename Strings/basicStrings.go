@@ -38,4 +38,20 @@ func main() {
 
 	data := strings.Split(s, "+")
 	fmt.Println(data)
+
+	w1 := "Hello"
+	w2 := "hello"
+
+	if strings.EqualFold(w1, w2) {
+		p("Equal")
+	} else {
+		p("nott equal")
+	}
+
+	str := "sun,mon,tue,wed,thu,fri,sat"
+	weekdays := strings.Split(str, ",")
+	for _, day := range weekdays {
+		fmt.Println(day)
+	}
+
 }
