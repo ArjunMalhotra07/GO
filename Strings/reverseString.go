@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-	fmt.Println(reverse("Hello"))
+	answer := reverse("Hey")
+	fmt.Println(answer)
 	s := "hello sir big fan"
 	ans := reverse_Word(s)
 	if ans == s {
