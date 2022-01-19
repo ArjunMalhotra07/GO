@@ -16,7 +16,7 @@ func main() {
 	p("Index:     ", strings.Index("test", "e"))
 	p("Join:      ", strings.Join([]string{"a", "b"}, "-"))
 	p("Repeat:    ", strings.Repeat("a", 5))
-	p("Replace:   ", strings.Replace("fooo", "o", "0", -1))
+	p("Replace:   ", strings.Replace("f.0o", "0", ".", -1))
 	p("Replace:   ", strings.Replace("fooo", "o", "0", 1))
 	p("Split:     ", strings.Split("a-b-c-d-e", "-"))
 	p("ToLower:   ", strings.ToLower("TEST"))
@@ -32,10 +32,10 @@ func main() {
 
 	langs := []string{"F#", "Go", "Python", "Perl", "Erlang"}
 
-	s := strings.Join(langs, "+ ")
+	s := strings.Join(langs, ", ")
 	fmt.Println(s)
 
-	data := strings.Split(s, "+")
+	data := strings.Split(s, ",")
 	fmt.Println(data)
 
 	w1 := "Hello"
@@ -49,6 +49,7 @@ func main() {
 
 	str := "sun,mon,tue,wed,thu,fri,sat"
 	weekdays := strings.Split(str, ",")
+	fmt.Println(weekdays)
 	for _, day := range weekdays {
 		fmt.Println(day)
 	}
