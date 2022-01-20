@@ -6,25 +6,15 @@ import (
 )
 
 func main() {
-	answer := reverse("Hey")
-	fmt.Println(answer)
-	s := "hello sir big fan"
-	ans := reverse_Word(s)
-	if ans == s {
-		fmt.Println("Yes")
-	} else {
-		fmt.Println("no")
-	}
-	words := strings.Fields(s)
-	res := strings.Join(words, " ")
-	fmt.Println(res)
-	for _, ans1 := range s {
-		fmt.Printf("%c", ans1)
-	}
+	x := fmt.Println
+	x(reverseLetter("Hey"))
+
+	s := "hi i love u "
+	x(reverse_Word(s))
 
 }
 
-func reverse(str string) string {
+func reverseLetter(str string) bool {
 	byte_String := []byte(str)
 	var temp byte
 
@@ -33,16 +23,27 @@ func reverse(str string) string {
 		byte_String[i] = byte_String[j]
 		byte_String[j] = temp
 	}
-
-	return string(byte_String)
+	test := string(byte_String)
+	fmt.Println(test)
+	if test == str {
+		return true
+	} else {
+		return false
+	}
 }
 
-func reverse_Word(s string) string {
-
+func reverse_Word(s string) bool {
 	words := strings.Fields(s)
-
 	for i, j := 0, len(words)-1; i < j; i, j = i+1, j-1 {
 		words[i], words[j] = words[j], words[i]
 	}
-	return strings.Join(words, " ")
+
+	test := strings.Join(words, " ")
+
+	fmt.Println(test)
+	if test == s {
+		return true
+	} else {
+		return false
+	}
 }
