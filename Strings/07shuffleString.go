@@ -9,7 +9,7 @@ func main() {
 }
 
 func restoreString(s string, indices []int) string {
-	ans := make([]byte, len(s))
+	ans := []byte(s)
 	for i, index := range indices {
 		ans[index] = s[i]
 	}
