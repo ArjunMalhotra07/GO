@@ -7,6 +7,11 @@ import (
 func main() {
 	ans := check1("125547")
 	fmt.Println(ans)
+
+	s := "fkf2929"
+	ans1 := hlo(s)
+	fmt.Println(ans1)
+	fmt.Println([]byte(s))
 }
 
 func check1(str string) bool {
@@ -18,4 +23,16 @@ func check1(str string) bool {
 		}
 	}
 	return b
+}
+
+//OR
+func hlo(str string) bool {
+	test := []byte(str)
+
+	for i := 0; i < len(str); i++ {
+		if (test[i]) <= 48 || (test[i]) >= 57 {
+			return false
+		}
+	}
+	return true
 }
