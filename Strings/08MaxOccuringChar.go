@@ -24,13 +24,10 @@ func testCheck(str string) string {
 	max := 0
 	ans := ""
 
-	count := 0
 	for key, value := range map1 {
 		if value > max {
 			max = value
 			ans = key
-		} else {
-			count++
 		}
 	}
 	return ans
