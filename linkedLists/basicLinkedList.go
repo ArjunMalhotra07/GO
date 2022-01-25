@@ -105,7 +105,7 @@ func (l *linkedList) deleteByValue(value int) {
 }
 
 func (l *linkedList) printList() {
-	if l.length == 0 { //or
+	if l.length == 0 {
 		return
 	}
 	currentNode := l.head
