@@ -4,14 +4,18 @@ import "fmt"
 
 func main() {
 	myList := linkedList{}
-	myList.insertBefore(21)
-	myList.insertBefore(15)
-	myList.insertBefore(456)
-	myList.insertBefore(1895)
+	myList.insertBeginning(21)
+	myList.insertBeginning(15)
+	myList.insertBeginning(456)
+	myList.insertBeginning(1895)
 	myList.printList()
 	myList.deleteByValue(15)
 	myList.printList()
 	myList.insertAfter(100, 456)
+	myList.printList()
+	myList.insertLast(555)
+	myList.printList()
+	myList.insertBefore(200, 456)
 	myList.printList()
 
 }
@@ -25,7 +29,7 @@ type linkedList struct {
 	length int
 }
 
-func (l *linkedList) insertBefore(value int) {
+func (l *linkedList) insertBeginning(value int) {
 	newNode := node{data: value}
 
 	if l.head != nil { //   45>98>14
@@ -37,17 +41,46 @@ func (l *linkedList) insertBefore(value int) {
 		l.length++
 	}
 }
+func (l *linkedList) insertBefore(value, before int) {
+	newNode := node{data: value}
 
-func (l *linkedList) printList() {
-	if l.length == 0 { //or
-		return
+	previous := l.head
+
+	for previous.next.data != before {
+
+		previous = previous.next
 	}
-	currentNode := l.head
-	for currentNode != nil {
-		fmt.Printf("%v ", currentNode.data)
-		currentNode = currentNode.next
+	newNode.next = previous.next
+	previous.next = &newNode
+
+}
+func (l *linkedList) insertAfter(value, after int) {
+	newNode := node{data: value}
+	insertAfter := l.head
+
+	for insertAfter.data != after {
+
+		insertAfter = insertAfter.next
 	}
-	fmt.Println()
+	newNode.next = insertAfter.next
+	insertAfter.next = &newNode
+
+}
+
+func (l *linkedList) insertLast(value int) {
+	newNode := node{data: value}
+
+	if l.head == nil {
+		l.head = &newNode
+		l.length++
+	} else {
+		currentNode := l.head
+		for currentNode.next != nil {
+			currentNode = currentNode.next
+		}
+		currentNode.next = &newNode
+		newNode.next = nil
+	}
 }
 func (l *linkedList) deleteByValue(value int) {
 	if l.head == nil { //or l.length==0
@@ -70,17 +103,15 @@ func (l *linkedList) deleteByValue(value int) {
 	l.length--
 
 }
-func (l *linkedList) insertAfter(value, after int) {
-	newNode := node{data: value}
-	insertAfter := l.head
 
-	for insertAfter != nil {
-		if insertAfter.data == after {
-			newNode.next = insertAfter.next
-			insertAfter.next = &newNode
-
-		}
-		insertAfter = insertAfter.next
+func (l *linkedList) printList() {
+	if l.length == 0 { //or
+		return
 	}
-
+	currentNode := l.head
+	for currentNode != nil {
+		fmt.Printf("%v ", currentNode.data)
+		currentNode = currentNode.next
+	}
+	fmt.Println()
 }
