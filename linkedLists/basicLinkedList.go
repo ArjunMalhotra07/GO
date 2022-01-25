@@ -36,7 +36,6 @@ func (l *linkedList) insertBefore(value int) {
 		l.head = &newNode
 		l.length++
 	}
-	return
 }
 
 func (l *linkedList) printList() {
