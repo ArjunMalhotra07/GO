@@ -14,6 +14,9 @@ func main() {
 	myList.insertAfter(100, 456)
 	myList.printList()
 	myList.insertLast(555)
+	myList.insertLast(550)
+	myList.printList()
+	myList.deleteByValue(550)
 	myList.printList()
 	myList.insertBefore(200, 456)
 	myList.printList()
@@ -32,8 +35,8 @@ type linkedList struct {
 func (l *linkedList) insertBeginning(value int) {
 	newNode := node{data: value}
 
-	if l.head != nil { //   45>98>14
-		newNode.next = l.head //21>45>98>14
+	if l.head != nil {
+		newNode.next = l.head
 		l.head = &newNode
 		l.length++
 	} else {
