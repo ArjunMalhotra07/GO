@@ -15,9 +15,17 @@ func main() {
 	tree.insert(118)
 	tree.insert(500)
 	tree.insert(121)
-
+	tree.insert(117)
+	f("Pre Order Traversal")
 	printPreOrder(tree)
-	f(tree.search(500))
+	f()
+	f("Post Order Traversal")
+	printPostOrder(tree)
+	f()
+	f("In Order Traversal")
+	printInOrder(tree)
+	f()
+	f(tree.search(123))
 
 	f(count)
 }
@@ -37,6 +45,7 @@ func (n *BinaryNode) insert(key int) {
 		//move right
 		if n.right == nil {
 			n.right = &BinaryNode{data: key}
+
 		} else {
 			n.right.insert(key)
 		}
@@ -44,39 +53,63 @@ func (n *BinaryNode) insert(key int) {
 		//move left
 		if n.left == nil {
 			n.left = &BinaryNode{data: key}
+
 		} else {
 			n.left.insert(key)
 		}
 	}
 }
 
-func (Node *BinaryNode) search(key int) bool {
+func (n *BinaryNode) search(key int) bool {
 	count++
-	if Node == nil {
+	if n == nil {
 		return false
 	}
-	if Node.data == key {
+	if n.data == key {
 		return true
 	}
 
-	if Node.data < key {
-		return Node.right.search(key)
+	if n.data < key {
+		return n.right.search(key)
 	}
 
-	if Node.data > key {
-		return Node.left.search(key)
+	if n.data > key {
+		return n.left.search(key)
 	}
 	return false
 }
-func printPreOrder(Node *BinaryNode) {
-	f := fmt.Println
-	f(Node.data)
-	if Node.left != nil {
-		printPreOrder(Node.left)
+func printPreOrder(n *BinaryNode) {
+	f := fmt.Printf
+	f("%v ", n.data)
+	if n.left != nil {
+		printPreOrder(n.left)
 	}
 
-	if Node.right != nil {
-		printPreOrder(Node.right)
+	if n.right != nil {
+		printPreOrder(n.right)
+	}
+
+}
+func printPostOrder(n *BinaryNode) {
+	f := fmt.Printf
+	if n.left != nil {
+		printPostOrder(n.left)
+	}
+	if n.right != nil {
+		printPostOrder(n.right)
+	}
+	f("%v ", n.data)
+
+}
+func printInOrder(n *BinaryNode) {
+	f := fmt.Printf
+	if n.left != nil {
+		printInOrder(n.left)
+	}
+	f("%v ", n.data)
+
+	if n.right != nil {
+		printInOrder(n.right)
 	}
 
 }
