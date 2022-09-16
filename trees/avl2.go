@@ -80,6 +80,7 @@ func isBalanced2(n *BinaryNode, height *float64) bool {
 
 	var f float64 = float64(lh - rh)
 	if math.Abs(f) <= 1 {
+
 		return true
 	} else {
 		return false

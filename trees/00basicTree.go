@@ -1,17 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 var count int
 
 func main() {
 	f := fmt.Println
-	tree := &BinaryNode{data: 100}
-	tree.insert(56)
-	tree.insert(54)
-	tree.insert(123)
-	tree.insert(125)
-	tree.insert(58)
+	tree := &BinaryNode{data: 6}
+	tree.insert(5)
+	tree.insert(4)
+	tree.insert(3)
+	tree.insert(2)
+	tree.insert(1)
 	tree.insert(118)
 	tree.insert(500)
 	tree.insert(121)
@@ -25,20 +27,16 @@ func main() {
 	f("In Order Traversal")
 	printInOrder(tree)
 	f()
-	f(tree.search(123))
+	f(tree.search(500))
 
-	f(count)
 }
 
 type BinaryNode struct {
-	data  int
-	left  *BinaryNode
-	right *BinaryNode
+	data   int
+	left   *BinaryNode
+	right  *BinaryNode
+	height int
 }
-
-// type BinaryTree struct {
-// 	root *BinaryNode
-// }
 
 func (n *BinaryNode) insert(key int) {
 	if n.data < key {

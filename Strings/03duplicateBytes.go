@@ -18,6 +18,7 @@ func findDuplicates(s string) map[string]int {
 	count := 0
 	testString := []byte(s)
 	length := len(s) - 1
+
 	for i := 0; i < len(s)-1; i++ {
 		if _, found := countMap[string(testString[i])]; !found {
 			for j := i + 1; j < len(s); j++ {
