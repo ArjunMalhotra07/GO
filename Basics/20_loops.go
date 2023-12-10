@@ -7,9 +7,9 @@ import (
 func Loops20() {
 	fmt.Println("Hlo")
 	s := []int{100, 2554, 3999}
-	for k, v := range s {
+	for index, value := range s {
 		//set them = range keyword then provide collection that u r going to range over
-		fmt.Println(k, v)
+		fmt.Println(index, value)
 
 	}
 	statePopulations := map[string]int{
@@ -23,9 +23,9 @@ func Loops20() {
 		"Illinois":     12801539,
 		"Ohio":         11614373,
 	}
-	for k, v := range statePopulations {
+	for index, value := range statePopulations {
 		//set them = range keyword then provide collection that u r going to range over
-		fmt.Println(k, v)
+		fmt.Println(index, value)
 
 	}
 	d := "Hello Go!!"
