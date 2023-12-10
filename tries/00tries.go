@@ -1,4 +1,4 @@
-package main
+package tries
 
 import "fmt"
 
@@ -51,7 +51,7 @@ func (t *Trie) Search(w string) bool {
 	return currentNode.isEnd
 
 }
-func main() {
+func MainFunction00() {
 	f := fmt.Println
 	testTrie := InitTrie()
 	f(testTrie.root)
