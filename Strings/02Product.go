@@ -1,11 +1,11 @@
-package main
+package strings
 
 import (
 	"fmt"
 	"strconv"
 )
 
-func main() {
+func MainFunction02() {
 	ans := Product("7", "3")
 	fmt.Println(ans)
 }

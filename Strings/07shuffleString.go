@@ -1,8 +1,8 @@
-package main
+package strings
 
 import "fmt"
 
-func main() {
+func MainFunction07() {
 	p := fmt.Println
 	indices := []int{4, 5, 6, 7, 0, 2, 1, 3}
 	p(restoreString("codeleet", indices))

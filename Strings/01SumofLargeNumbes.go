@@ -1,11 +1,11 @@
-package main
+package strings
 
 import (
 	"fmt"
 	"strconv"
 )
 
-func main() {
+func MainFunction01() {
 	ans := sum("7A", "3")
 	fmt.Println(ans)
 }

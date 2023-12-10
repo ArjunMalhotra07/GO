@@ -1,10 +1,10 @@
-package main
+package strings
 
 import (
 	"fmt"
 )
 
-func main() {
+func MainFunction04() {
 	test := "Arjun"
 	ans := reverse(test, len(test)-1)
 	fmt.Println(ans)

@@ -1,8 +1,8 @@
-package main
+package strings
 
 import "fmt"
 
-func main() {
+func MainFunction03() {
 	f := fmt.Println
 	f("Enter Word to find Duplicate Characters -- ")
 	var input string

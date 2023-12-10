@@ -1,10 +1,10 @@
-package main
+package strings
 
 import (
 	"fmt"
 )
 
-func main() {
+func MainFunction05() {
 	ans := check1("125547")
 	fmt.Println(ans)
 
@@ -25,7 +25,7 @@ func check1(str string) bool {
 	return b
 }
 
-//OR
+// OR
 func hlo(str string) bool {
 	test := []byte(str)
 

@@ -1,8 +1,8 @@
-package main
+package strings
 
 import "fmt"
 
-func main() {
+func MainFunction15() {
 	ans := strStr("arjunmalhotra", "alh")
 	ans1 := str("arjunmalhotra", "")
 	fmt.Println(ans)

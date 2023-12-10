@@ -1,11 +1,11 @@
-package main
+package strings
 
 import (
 	"fmt"
 	"strings"
 )
 
-func main() {
+func MainFunction06() {
 
 	test := "1.1.1.1"
 	fmt.Println(mostString1(test))

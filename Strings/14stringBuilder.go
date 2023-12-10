@@ -1,11 +1,11 @@
-package main
+package strings
 
 import (
 	"fmt"
 	"strings"
 )
 
-func main() {
+func MainFunction14() {
 
 	var sb strings.Builder
 	fmt.Println("This is a string builder", sb.String())

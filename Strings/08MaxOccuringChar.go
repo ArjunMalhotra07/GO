@@ -1,12 +1,12 @@
-//-->How to find the maximum occurring character in given String?
-package main
+// -->How to find the maximum occurring character in given String?
+package strings
 
 import (
 	"fmt"
 	"strings"
 )
 
-func main() {
+func MainFunction08() {
 	p := fmt.Println
 	p(testCheck("hello"))
 

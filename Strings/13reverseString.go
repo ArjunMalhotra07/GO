@@ -1,11 +1,11 @@
-package main
+package strings
 
 import (
 	"fmt"
 	"strings"
 )
 
-func main() {
+func MainFunction13() {
 	x := fmt.Println
 	x(reverseLetter("Hey"))
 

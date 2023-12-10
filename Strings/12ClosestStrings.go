@@ -1,11 +1,11 @@
-package main
+package strings
 
 import (
 	"fmt"
 	"sort"
 )
 
-func main() {
+func MainFunction12() {
 	s := []string{"geeks", "for", "geeks", "contribute", "practice"}
 	fmt.Println(s)
 	min(s, "geeks", "practice")
