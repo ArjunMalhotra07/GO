@@ -1,12 +1,11 @@
-package main
+package arrays
 
 import (
 	"fmt"
 	"math"
 )
 
-func main() {
-	//f:=fmt.Println
+func MainFunction() {
 	x := []int{1, 2, 3, 4, 5}
 	sum(len(x), x)
 
