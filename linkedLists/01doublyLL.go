@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func MainFunction01() {
 
 	myList := linkedList_Doubly{}
 	myList.insertBeginning_Doubly(21)
