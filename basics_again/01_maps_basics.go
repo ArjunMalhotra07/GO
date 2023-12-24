@@ -1,3 +1,8 @@
+// ! Get Value from a Map
+// ! Add/ Edit value to a key in the map
+// ! Delete a key from a map
+// ! Check if a key exists in a map
+// ! Check length of a map
 package basicsagain
 
 import "fmt"
@@ -38,4 +43,12 @@ func Maps01Basics() {
 	fmt.Println(new_StatePopulation)
 	//Underlyind data is passed by reference
 	//Manipulating 1 variable that points to a map is going to have impact on other one
+	//! Iterate over maps
+	iterateOverMaps(new_StatePopulation)
+}
+
+func iterateOverMaps(incomingHashMap map[string]int) {
+	for key, value := range incomingHashMap {
+		fmt.Println(key, value)
+	}
 }
