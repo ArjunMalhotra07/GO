@@ -32,15 +32,6 @@ func (h *Minheap) minHeapifyUp(index int) {
 	}
 }
 
-func getparentIndex(index int) int {
-	return (index - 1) / 2
-}
-func getLeftChildIndex(index int) int {
-	return 2*index + 1
-}
-func getRightChildIndex(index int) int {
-	return 2*index + 2
-}
 
 func (h *Minheap) swap(i1, i2 int) {
 	h.nums[i1], h.nums[i2] = h.nums[i2], h.nums[i1]

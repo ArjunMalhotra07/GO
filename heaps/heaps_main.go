@@ -2,5 +2,6 @@ package heaps
 
 func MainFunction() {
 	// makeHeapTree()
-	GetKSortedElements()
+	// GetKSortedElements()
+	DoReturnKClosestPoints()
 }
