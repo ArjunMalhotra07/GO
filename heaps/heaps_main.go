@@ -1,5 +1,6 @@
 package heaps
 
 func MainFunction() {
-	makeHeapTree()
+	// makeHeapTree()
+	GetKSortedElements()
 }
