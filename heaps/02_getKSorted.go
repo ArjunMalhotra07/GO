@@ -10,7 +10,7 @@ func DoReturnKClosestPoints() {
 	// array := [][]int{{1, 0}, {10, 0}, {11, 0}, {5, 0}}
 	array := [][]int{{1, 3}, {-2, 2}}
 
-	fmt.Println(kClosest(array, 2))
+	fmt.Println(kClosest(array, 1))
 
 }
 
@@ -35,22 +35,14 @@ func kClosest(points [][]int, k int) [][]int {
 }
 
 func (h *hMapHeap) insert(temp []int) {
-	h.array = append(h.array, hMapStruct{nums: temp, sum: getDistance(temp)})
+	h.array = append(h.array, hMapStruct{nums: temp, sum: math.Sqrt(math.Pow(float64(temp[0])-float64(0), 2) + math.Pow(float64(temp[1])-float64(0), 2))})
 	h.minHeapifyUp(len(h.array) - 1)
 }
 func (h *hMapHeap) minHeapifyUp(index int) {
-
 	for h.array[getparentIndex(index)].sum > h.array[index].sum {
 		h.swap(getparentIndex(index), index)
 		index = getparentIndex(index)
 	}
-}
-
-func getDistance(tempArray []int) float64 {
-	distX := math.Pow(float64(tempArray[0])-float64(0), 2)
-	distY := math.Pow(float64(tempArray[1])-float64(0), 2)
-	total := math.Sqrt(distX + distY)
-	return total
 }
 
 func (h *hMapHeap) swap(i1, i2 int) {
