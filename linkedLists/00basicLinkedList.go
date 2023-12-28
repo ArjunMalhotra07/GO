@@ -1,4 +1,4 @@
-package main
+package linkedList
 
 import "fmt"
 
@@ -20,6 +20,8 @@ func MainFunction00() {
 	myList.printList()
 	myList.insertBefore(200, 456)
 	myList.printList()
+	c := &myList
+	fmt.Println(c)
 
 }
 
@@ -86,17 +88,17 @@ func (l *linkedList) insertLast(value int) {
 	}
 }
 func (l *linkedList) deleteByValue(value int) {
-	//! If HEAD is Nil 
+	//! If HEAD is Nil
 	if l.head == nil { //or l.length==0
 		return
 	}
-	//! If Head is the Target Node 
+	//! If Head is the Target Node
 	if l.head.data == value {
 		l.head = l.head.next
 		l.length--
 		return
 	}
-	//! If Target Node is anywhere in Between 
+	//! If Target Node is anywhere in Between
 	previousToDelete := l.head
 	for previousToDelete.next.data != value {
 		if previousToDelete.next.next == nil {
@@ -105,7 +107,7 @@ func (l *linkedList) deleteByValue(value int) {
 		previousToDelete = previousToDelete.next
 	}
 	previousToDelete.next = previousToDelete.next.next
-	l.length-- 
+	l.length--
 }
 
 func (l *linkedList) printList() {
