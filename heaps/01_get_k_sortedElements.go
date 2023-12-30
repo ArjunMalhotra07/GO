@@ -2,18 +2,23 @@ package heaps
 
 import "fmt"
 
-func GetKSortedElements() {
-	nums := []int{1789, 87434, 343, 6, 7, 8, 9, 10, 15, 200, 99, 4560}
+func GetKSortedElements01() {
+	// nums := []int{1789, 87434, 343, 6, 7, 8, 9, 10, 15, 200, 99, 4560}
+	// nums := []int{10, 4, 8, 13, 20}
+	nums2 := []int{1, 5, 4, 6, 8, 9, 2}
 	heapvariable := &Minheap{}
-	for _, v := range nums {
+	for _, v := range nums2 {
 		heapvariable.insert(v)
-		fmt.Println(heapvariable.nums)
+		// fmt.Println(heapvariable.nums)
 	}
-	ansArray := []int{}
-	for i := 0; i < 4; i++ {
-		ansArray = append(ansArray, heapvariable.extractRoot())
+	// minConsumption := 0
+	sortedArray := []int{}
+	for i := 0; i < len(nums2); i++ {
+		sortedArray = append(sortedArray, heapvariable.extractRoot())
+		// minConsumption += heapvariable.extractRoot()
 	}
-	fmt.Println(ansArray)
+	// fmt.Println(minConsumption)
+	fmt.Println(sortedArray)
 }
 
 type Minheap struct {
@@ -31,7 +36,6 @@ func (h *Minheap) minHeapifyUp(index int) {
 		index = getparentIndex(index)
 	}
 }
-
 
 func (h *Minheap) swap(i1, i2 int) {
 	h.nums[i1], h.nums[i2] = h.nums[i2], h.nums[i1]
@@ -68,8 +72,8 @@ func (h *Minheap) minHeapifyDown(index int) {
 				h.swap(index, childToCompare)
 				index = childToCompare
 				leftChildIndex, rightChildIndex = getLeftChildIndex(index), getRightChildIndex(index)
-			}else{
-				return 
+			} else {
+				return
 			}
 		}
 
