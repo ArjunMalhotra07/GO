@@ -1,6 +1,6 @@
 package basicsagain
 
 func MainFunction() {
-	Maps01Basics()
-	// Arrays00Basics()
+	// Maps01Basics()
+	Arrays00Basics()
 }

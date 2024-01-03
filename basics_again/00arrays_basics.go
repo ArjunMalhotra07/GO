@@ -9,7 +9,7 @@ func Arrays00Basics() {
 	arr[0] = 10
 	arr[1] = 20
 	arr = append(arr, 30)
-	arr = append(arr, 30)
+	arr = append(arr, 40)
 	fmt.Println(arr)
 	//! Add to Slice
 	arr1 := []int{}
@@ -38,4 +38,6 @@ func iterateOverArray(arr []int) {
 	for index, value := range arr {
 		fmt.Println(index, value)
 	}
+	ansArray := [][]int{}
+	ansArray = append(ansArray, []int{5, 10})
 }
