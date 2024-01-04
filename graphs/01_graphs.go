@@ -38,6 +38,7 @@ func (g *Graph) addEdge(source, destination int) {
 		return
 	} else {
 		sourceVertex.Neighbours = append(sourceVertex.Neighbours, destinationVertex)
+		destinationVertex.Neighbours = append(destinationVertex.Neighbours, sourceVertex)
 	}
 }
 
@@ -74,14 +75,24 @@ func (g *Graph) printGraphAdjacencyList() {
 
 func PerformGraphsOps() {
 	myGraph := &Graph{}
-	for i := 0; i < 5; i++ {
-		myGraph.addVertexMethod(i)
-	}
-	myGraph.addVertexMethod(3)
-	myGraph.addEdge(0, 4)
-	myGraph.addEdge(0, 4)
-	myGraph.addEdge(1, 6)
-	myGraph.addEdge(3, 2)
+	makeGraph(myGraph)
 	myGraph.printGraphAdjacencyList()
+	BreadthFirstSearch(myGraph)
+}
 
+func makeGraph(g *Graph) {
+	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 6}, {2, 3}, {2, 4}, {6, 7}, {6, 8}, {4, 5}, {7, 5}}, maxVerticesCount: 8}
+	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 3}, {1, 2}, {3, 4}, {2, 4}, {5, 6}, {6, 7}, {5, 7}, {8, 9}}, maxVerticesCount: 10}
+	for i := 1; i <= exampleGraphStruct.maxVerticesCount; i++ {
+		g.addVertexMethod(i)
+	}
+	for i := 0; i < len(exampleGraphStruct.array); i++ {
+		g.addEdge(exampleGraphStruct.array[i][0], exampleGraphStruct.array[i][1])
+	}
+
+}
+
+type ExampleGraphStruct struct {
+	array            [][]int
+	maxVerticesCount int
 }
