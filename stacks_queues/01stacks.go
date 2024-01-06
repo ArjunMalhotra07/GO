@@ -13,8 +13,8 @@ func (s *Stack) Push(n int) {
 func (s *Stack) Pop() int {
 	lastIndex := len(s.items) - 1
 	if lastIndex >= 0 {
-		removedItem := s.items[len(s.items)-1]
-		s.items = s.items[:len(s.items)-1]
+		removedItem := s.items[lastIndex]
+		s.items = s.items[:lastIndex]
 		return removedItem
 	} else {
 		fmt.Println("Empty Stack")

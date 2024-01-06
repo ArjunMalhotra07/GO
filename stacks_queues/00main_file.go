@@ -1,5 +1,6 @@
 package stacksqueues
 
 func MainFunction() {
-	DoQueueOperations()
+	DoStackOpeartions()
+	// DoQueueOperations()
 }
