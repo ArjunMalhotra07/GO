@@ -25,7 +25,7 @@ func BreadthFirstSearch(graph *Graph) {
 			}
 		}
 	}
-	fmt.Println("Breadth First Search of Graph:", ansArray)
+	fmt.Println("BFS:", ansArray)
 }
 
 type Queue struct {

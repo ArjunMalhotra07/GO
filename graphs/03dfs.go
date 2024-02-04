@@ -22,7 +22,7 @@ func DepthFirstSearch(graph *Graph) {
 			}
 		}
 	}
-	fmt.Println("Depth First Search:", ansArray)
+	fmt.Println("DFS:", ansArray)
 }
 
 type Stack struct {

@@ -3,20 +3,22 @@ package graphs
 import "fmt"
 
 func PerformGraphsOps() {
-	myGraph := &Graph{}
+	//! Initialisation of Graph Vars
+	listGraph := &Graph{}
 	matrixGraph := &GraphMatrix{}
-	makeGraph(myGraph, matrixGraph)
-	myGraph.printGraphAdjacencyList()
+	makeGraph(listGraph, matrixGraph)
+	//! Print Graph Info
+	listGraph.printGraphAdjacencyList()
 	matrixGraph.printGraphMatrix()
-	BreadthFirstSearch(myGraph)
-	DepthFirstSearch(myGraph)
+	BreadthFirstSearch(listGraph)
+	DepthFirstSearch(listGraph)
 	fmt.Println("Number of Provinces in Graph", GetNumberOfProvinces(matrixGraph.Nodes))
-	fmt.Println("Using BFS Cycle has Graph:", DetectCycleUsingBFS(myGraph))
-	fmt.Println("Using DFS Cycle has Graph:", DetectCycleUsingDFS(myGraph))
+	fmt.Println("Using BFS Cycle has Graph:", DetectCycleUsingBFS(listGraph))
+	fmt.Println("Using DFS Cycle has Graph:", DetectCycleUsingDFS(listGraph))
 
 }
 
-func makeGraph(g *Graph, matrixGraph *GraphMatrix) {
+func makeGraph(listGraph *Graph, matrixGraph *GraphMatrix) {
 	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 6}, {2, 3}, {2, 4}, {6, 7}, {6, 8}, {4, 5}, {7, 5}}, maxVerticesCount: 8}
 	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 3}, {2, 5}, {2, 6}, {3, 4}, {3, 7}, {7, 8}, {4, 8}}, maxVerticesCount: 8}
 	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {2, 3}, {4, 5}, {5, 6}, {7, 8}}, maxVerticesCount: 8} //!Provinces Example Graph
@@ -28,13 +30,13 @@ func makeGraph(g *Graph, matrixGraph *GraphMatrix) {
 
 	matrixGraph.Nodes = make([][]int, exampleGraphStruct.maxVerticesCount+1)
 	for i := 1; i <= exampleGraphStruct.maxVerticesCount; i++ {
-		g.addVertexMethod(i)
+		listGraph.addVertexMethod(i)
 	}
 	for i := 0; i < exampleGraphStruct.maxVerticesCount+1; i++ {
 		matrixGraph.Nodes[i] = make([]int, exampleGraphStruct.maxVerticesCount+1)
 	}
 	for i := 0; i < len(exampleGraphStruct.array); i++ {
-		g.addEdge(exampleGraphStruct.array[i][0], exampleGraphStruct.array[i][1])
+		listGraph.addEdge(exampleGraphStruct.array[i][0], exampleGraphStruct.array[i][1])
 		matrixGraph.addEdgeInMatrixGraph(exampleGraphStruct.array[i][0], exampleGraphStruct.array[i][1])
 	}
 
