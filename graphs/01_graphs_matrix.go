@@ -7,8 +7,11 @@ type GraphMatrix struct {
 }
 
 func (g *GraphMatrix) printGraphMatrix() {
-	row := []int{0, 1, 2, 3, 4, 5, 6, 7, 8}
-	fmt.Print("  ", row)
+	dummy := make([]int, len(g.Nodes))
+	for i := 0; i < len(g.Nodes); i++ {
+		dummy[i] = i
+	}
+	fmt.Print("  ", dummy)
 	fmt.Println()
 	for i := 0; i < len(g.Nodes); i++ {
 		fmt.Print(i, g.Nodes[i])

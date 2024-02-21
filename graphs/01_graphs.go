@@ -10,9 +10,11 @@ func PerformGraphsOps() {
 	//! Print Graph Info
 	listGraph.printGraphAdjacencyList()
 	matrixGraph.printGraphMatrix()
+	//! BFS and DFS of same Graph
 	BreadthFirstSearch(listGraph)
 	DepthFirstSearch(listGraph)
 	fmt.Println("Number of Provinces in Graph", GetNumberOfProvinces(matrixGraph.Nodes))
+	//! Checking cycles using DFS and BFS of List Graph
 	fmt.Println("Using BFS Cycle has Graph:", DetectCycleUsingBFS(listGraph))
 	fmt.Println("Using DFS Cycle has Graph:", DetectCycleUsingDFS(listGraph))
 

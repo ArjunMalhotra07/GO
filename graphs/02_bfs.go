@@ -2,7 +2,7 @@ package graphs
 
 import "fmt"
 
-func BreadthFirstSearch(graph *Graph) {
+func  BreadthFirstSearch(graph *Graph) {
 	if len(graph.Vertices) == 0 {
 		fmt.Println("Empty graph")
 		return
