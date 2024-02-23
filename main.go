@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/ArjunMalhotra07/GO/graphs"
-)
+import "github.com/ArjunMalhotra07/GO/trees"
 
 func main() {
 	// patterns.MainFunction()
@@ -13,8 +11,8 @@ func main() {
 	// heaps.MainFunction()
 
 	// stacksqueues.MainFunction()
-	// trees.DoTreeOperations()
+	trees.DoTreeOperations()
 	// graphs.MainFunction()
 	// dp.MainFunction()
-	graphs.MainFunction()
+	// graphs.MainFunction()
 }
