@@ -6,11 +6,7 @@ import (
 )
 
 func getBalanceFactor(t *Node) float64 {
-	if t == nil {
-		return 0
-	} else {
-		return getHeight(t.Left) - getHeight(t.Right)
-	}
+	return getHeight(t.Left) - getHeight(t.Right)
 }
 func getHeight(t *Node) float64 {
 	if t == nil {
@@ -22,26 +18,28 @@ func getHeight(t *Node) float64 {
 
 // ! Insert
 func (t *Node) InsertIntotree(value int) *Node {
+	fmt.Println("*********")
 
 	if value < t.Key {
 		//! Move left
 		if t.Left == nil {
-			t.Left = &Node{Key: value}
+			t.Left = &Node{Key: value, Height: 1}
 		} else {
-			t.Left.InsertIntotree(value)
+			t.Left = t.Left.InsertIntotree(value)
 		}
 	} else if value > t.Key {
 		//! Move Right
 		if t.Right == nil {
-			t.Right = &Node{Key: value}
+			t.Right = &Node{Key: value, Height: 1}
 		} else {
-			t.Right.InsertIntotree(value)
+			t.Right = t.Right.InsertIntotree(value)
 		}
 	}
 	//! Height of Node where Key is added and not the Key Node (It's already zero)
 	height := math.Max(getHeight(t.Left), getHeight(t.Right)) + 1
 	t.Height = height
-	// balanceFactor := getBalanceFactor(t)
+	balanceFactor := getBalanceFactor(t)
+	fmt.Println("Value ", t.Key, "BF", balanceFactor)
 	// if balanceFactor > 1 {
 	// 	fmt.Println("here")
 	// 	if value < t.Left.Key {

@@ -27,7 +27,7 @@ func arrayInput(root *Node) {
 	arr := []int{4, 3, 2, 1}
 	for i := 0; i < len(arr); i++ {
 		root = root.InsertIntotree(arr[i])
-		fmt.Println(root.Key)
+		// fmt.Println(root.Key)
 	}
 	// root = root.InsertIntotree(2)
 	// root.InsertIntotree(1)
