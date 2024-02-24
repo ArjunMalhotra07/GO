@@ -16,44 +16,44 @@ func getHeight(t *Node) float64 {
 }
 
 // ! Insert
-func (t *Node) InsertIntotree(value int) *Node {
+func (root *Node) InsertIntotree(value int) *Node {
 
-	if value < t.Key {
+	if value < root.Key {
 		//! Move left
-		if t.Left == nil {
-			t.Left = &Node{Key: value, Height: 1}
+		if root.Left == nil {
+			root.Left = &Node{Key: value, Height: 1}
 		} else {
-			t.Left = t.Left.InsertIntotree(value)
+			root.Left = root.Left.InsertIntotree(value)
 		}
-	} else if value > t.Key {
+	} else if value > root.Key {
 		//! Move Right
-		if t.Right == nil {
-			t.Right = &Node{Key: value, Height: 1}
+		if root.Right == nil {
+			root.Right = &Node{Key: value, Height: 1}
 		} else {
-			t.Right = t.Right.InsertIntotree(value)
+			root.Right = root.Right.InsertIntotree(value)
 		}
 	}
 	//! Height of Node where Key is added and not the Key Node (It's already zero)
-	height := math.Max(getHeight(t.Left), getHeight(t.Right)) + 1
-	t.Height = height
-	balanceFactor := getBalanceFactor(t)
+	height := math.Max(getHeight(root.Left), getHeight(root.Right)) + 1
+	root.Height = height
+	balanceFactor := getBalanceFactor(root)
 	if balanceFactor > 1 {
-		if value < t.Left.Key {
-			return t.rightRotate()
-		} else if value > t.Left.Key {
-			t.Left = t.Left.leftRotate()
-			return t.rightRotate()
+		if value < root.Left.Key {
+			return root.rightRotate()
+		} else if value > root.Left.Key {
+			root.Left = root.Left.leftRotate()
+			return root.rightRotate()
 		}
 	}
 	if balanceFactor < -1 {
-		if value > t.Right.Key {
-			return t.leftRotate()
-		} else if value < t.Right.Key {
-			t.Right = t.rightRotate()
-			return t.leftRotate()
+		if value > root.Right.Key {
+			return root.leftRotate()
+		} else if value < root.Right.Key {
+			root.Right = root.rightRotate()
+			return root.leftRotate()
 		}
 	}
-	return t
+	return root
 }
 
 func (y *Node) rightRotate() *Node {
