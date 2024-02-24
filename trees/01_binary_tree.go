@@ -1,8 +1,6 @@
 package trees
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // ! Node
 type Node struct {
@@ -13,7 +11,7 @@ type Node struct {
 }
 
 func DoTreeOperations() {
-	myTree := &Node{Key: 3}
+	myTree := &Node{Key: 5}
 	arrayInput(myTree)
 	fmt.Println("Preorder")
 	printAns(myTree.PreOrderTraversal([]*Node{}))
@@ -22,13 +20,16 @@ func DoTreeOperations() {
 	fmt.Println("Postorder")
 	printAns(myTree.PostOrderTraversal([]*Node{}))
 	fmt.Println(myTree.SearchValueInTree(160))
-	// balanceFactor := getBalanceFactor(myTree)
-	// fmt.Println("Balance Factor", balanceFactor)
+
 }
 
-func arrayInput(treeNode *Node) {
-	arr := []int{2, 1}
+func arrayInput(root *Node) {
+	arr := []int{4, 3, 2, 1}
 	for i := 0; i < len(arr); i++ {
-		treeNode.InsertIntotree(arr[i])
+		root = root.InsertIntotree(arr[i])
+		fmt.Println(root.Key)
 	}
+	// root = root.InsertIntotree(2)
+	// root.InsertIntotree(1)
+
 }
