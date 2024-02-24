@@ -1,7 +1,6 @@
 package trees
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -18,7 +17,6 @@ func getHeight(t *Node) float64 {
 
 // ! Insert
 func (t *Node) InsertIntotree(value int) *Node {
-	fmt.Println("*********")
 
 	if value < t.Key {
 		//! Move left
@@ -39,24 +37,22 @@ func (t *Node) InsertIntotree(value int) *Node {
 	height := math.Max(getHeight(t.Left), getHeight(t.Right)) + 1
 	t.Height = height
 	balanceFactor := getBalanceFactor(t)
-	fmt.Println("Value ", t.Key, "BF", balanceFactor)
-	// if balanceFactor > 1 {
-	// 	fmt.Println("here")
-	// 	if value < t.Left.Key {
-	// 		return t.rightRotate()
-	// 	} else if value > t.Left.Key {
-	// 		t.Left = t.Left.leftRotate()
-	// 		return t.rightRotate()
-	// 	}
-	// }
-	// if balanceFactor < -1 {
-	// 	if value > t.Right.Key {
-	// 		return t.leftRotate()
-	// 	} else if value < t.Right.Key {
-	// 		t.Right = t.rightRotate()
-	// 		return t.leftRotate()
-	// 	}
-	// }
+	if balanceFactor > 1 {
+		if value < t.Left.Key {
+			return t.rightRotate()
+		} else if value > t.Left.Key {
+			t.Left = t.Left.leftRotate()
+			return t.rightRotate()
+		}
+	}
+	if balanceFactor < -1 {
+		if value > t.Right.Key {
+			return t.leftRotate()
+		} else if value < t.Right.Key {
+			t.Right = t.rightRotate()
+			return t.leftRotate()
+		}
+	}
 	return t
 }
 
@@ -65,7 +61,7 @@ func (y *Node) rightRotate() *Node {
 	t2 := x.Right
 	x.Right = y
 	y.Left = t2
-	y.Height = math.Max(getHeight(y.Left), getHeight(y.Right))
+	y.Height = math.Max(getHeight(y.Left), getHeight(y.Right)) + 1
 	x.Height = math.Max(getHeight(x.Left), getHeight(x.Right)) + 1
 	return x
 }
@@ -75,7 +71,7 @@ func (x *Node) leftRotate() *Node {
 	y.Left = x
 	x.Right = t2
 	y.Height = math.Max(getHeight(y.Left), getHeight(y.Right)) + 1
-	x.Height = math.Max(getHeight(x.Left), getHeight(x.Right))
+	x.Height = math.Max(getHeight(x.Left), getHeight(x.Right)) + 1
 	return y
 }
 
@@ -84,7 +80,6 @@ func (t *Node) SearchValueInTree(n int) bool {
 	if t == nil {
 		return false
 	}
-	fmt.Println("NODE VALUE", t.Key)
 	if n < t.Key {
 		return t.Left.SearchValueInTree(n)
 	} else if n > t.Key {
