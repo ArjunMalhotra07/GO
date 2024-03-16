@@ -1,8 +1,11 @@
 package main
 
-import "github.com/ArjunMalhotra07/GO/trees"
+import (
+	"github.com/ArjunMalhotra07/GO/arrays"
+)
 
 func main() {
+	arrays.MainFunction()
 	// patterns.MainFunction()
 	// strings.MainFunction()
 	// basics.MainFunction()
@@ -11,7 +14,7 @@ func main() {
 	// heaps.MainFunction()
 
 	// stacksqueues.MainFunction()
-	trees.DoTreeOperations()
+	// trees.DoTreeOperations()
 	// graphs.MainFunction()
 	// dp.MainFunction()
 	// graphs.MainFunction()
