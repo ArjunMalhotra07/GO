@@ -4,30 +4,22 @@ import "fmt"
 
 func PerformDijkstra() {
 	// ! Initialisation of Graph Vars
-	listGraph := &Graph{}
 	matrixGraph := &GraphMatrix{}
 
 	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2, 4}, {1, 3, 4}, {2, 3, 2}, {3, 4, 3}, {3, 5, 1}, {3, 6, 6}, {4, 6, 2}, {5, 6, 3}}, maxVerticesCount: 6} //! Weighted Graphs
 
 	matrixGraph.Nodes = make([][]int, exampleGraphStruct.maxVerticesCount+1)
-	for i := 1; i <= exampleGraphStruct.maxVerticesCount; i++ {
-		listGraph.addVertexMethod(i)
-	}
+
 	for i := 0; i < exampleGraphStruct.maxVerticesCount+1; i++ {
 		matrixGraph.Nodes[i] = make([]int, exampleGraphStruct.maxVerticesCount+1)
 	}
 	for i := 0; i < len(exampleGraphStruct.array); i++ {
-		listGraph.addEdge(exampleGraphStruct.array[i][0], exampleGraphStruct.array[i][1])
-		matrixGraph.addEdgeInMatrixGraph(exampleGraphStruct.array[i][0], exampleGraphStruct.array[i][1])
 		matrixGraph.addEdgeWeightInMatrixGraph(exampleGraphStruct.array[i][0], exampleGraphStruct.array[i][1], exampleGraphStruct.array[i][2])
 	}
 	// ! Print Graph Info
-	listGraph.printGraphAdjacencyList()
 	matrixGraph.printGraphMatrix()
 	// ! BFS and DFS of same Graph
-	BreadthFirstSearch(listGraph)
-	DepthFirstSearch(listGraph)
-	fmt.Println(FindMinDistMatrix(*matrixGraph, 3))
+	fmt.Println(FindMinDistMatrix(*matrixGraph, 1))
 }
 
 func FindMinDistMatrix(g GraphMatrix, source int) []int {
