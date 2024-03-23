@@ -25,6 +25,9 @@ func arrayInput(root *Node) {
 	printAns(root.PreOrderTraversal([]*Node{}))
 	fmt.Println("Inorder")
 	printAns(root.InOrderTraversal([]*Node{}))
+	// fmt.Println("Inorder")
+	// printAns(root.InOrderTraversal2())
+
 	fmt.Println("Postorder")
 	printAns(root.PostOrderTraversal([]*Node{}))
 	fmt.Println(root.SearchValueInTree(160))
