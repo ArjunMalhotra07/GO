@@ -13,10 +13,11 @@ func PerformGraphsOps() {
 	//! BFS and DFS of same Graph
 	BreadthFirstSearch(listGraph)
 	DepthFirstSearch(listGraph)
+	//! Count Number of Provinces in Graph
 	fmt.Println("Number of Provinces in Graph", GetNumberOfProvinces(matrixGraph.Nodes))
 	//! Checking cycles using DFS and BFS of List Graph
-	fmt.Println("Using BFS Cycle has Graph:", DetectCycleUsingBFS(listGraph))
-	fmt.Println("Using DFS Cycle has Graph:", DetectCycleUsingDFS(listGraph))
+	// fmt.Println("Using BFS Cycle has Graph:", DetectCycleUsingBFS(listGraph))
+	// fmt.Println("Using DFS Cycle has Graph:", DetectCycleUsingDFS(listGraph))
 
 }
 

@@ -23,3 +23,8 @@ func (g *GraphMatrix) addEdgeInMatrixGraph(sourceKey, destinationkey int) {
 	g.Nodes[sourceKey][destinationkey] = 1
 	g.Nodes[destinationkey][sourceKey] = 1
 }
+
+func (g *GraphMatrix) addEdgeWeightInMatrixGraph(sourceKey, destinationkey, weight int) {
+	g.Nodes[sourceKey][destinationkey] = weight
+	g.Nodes[destinationkey][sourceKey] = weight
+}

@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/ArjunMalhotra07/GO/arrays"
+	"github.com/ArjunMalhotra07/GO/graphs"
 )
 
 func main() {
@@ -15,7 +16,7 @@ func main() {
 
 	// stacksqueues.MainFunction()
 	// trees.DoTreeOperations()
-	// graphs.MainFunction()
+	graphs.MainFunction()
 	// dp.MainFunction()
 	// graphs.MainFunction()
 }
