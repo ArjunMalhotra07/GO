@@ -27,7 +27,7 @@ func PerformDijkstra() {
 	// ! BFS and DFS of same Graph
 	BreadthFirstSearch(listGraph)
 	DepthFirstSearch(listGraph)
-	fmt.Println(FindMinDistMatrix(*matrixGraph, 1))
+	fmt.Println(FindMinDistMatrix(*matrixGraph, 3))
 }
 
 func FindMinDistMatrix(g GraphMatrix, source int) []int {
@@ -41,7 +41,7 @@ func FindMinDistMatrix(g GraphMatrix, source int) []int {
 		return ans
 	}
 	//! Distance, Node
-	h.addInHeap([]int{0, 1})
+	h.addInHeap([]int{0, source})
 	for len(h.heap) != 0 {
 		root := h.getTopElementFromHeap()
 		for node := 0; node < len(g.Nodes); node++ {
