@@ -25,6 +25,8 @@ func PerformDijkstra() {
 
 func FindMinDistMatrix(g GraphMatrix, source int) []int {
 	ans := make([]int, len(g.Nodes))
+	isNodeAlreadyRelaxed := make([]int, len(g.Nodes))
+
 	for i := 1; i < len(ans); i++ {
 		ans[i] = 343434343434
 	}
@@ -33,18 +35,23 @@ func FindMinDistMatrix(g GraphMatrix, source int) []int {
 	if len(g.Nodes) == 0 {
 		return ans
 	}
+
 	//! Adding {Distance, Node} in Min Heap
 	h.addInHeap([]int{0, source})
 	for len(h.heap) != 0 {
 		root := h.getTopElementFromHeap()
-		for node := 1; node < len(g.Nodes); node++ {
-			//! Looping through each edge and getting its weight
-			cellValue := g.Nodes[root[1]][node]
-			dist := cellValue + root[0]
+		fmt.Println("relaxed", root)
+		if isNodeAlreadyRelaxed[root[1]] == 0 {
+			isNodeAlreadyRelaxed[root[1]] = 1
+			for node := 1; node < len(g.Nodes); node++ {
+				//! Looping through each edge, getting its weight & updating dist in ans array if its less than before
+				cellValue := g.Nodes[root[1]][node]
+				dist := cellValue + root[0]
 
-			if cellValue != 0 && dist < ans[node] {
-				ans[node] = dist
-				h.addInHeap([]int{dist, node})
+				if cellValue != 0 && dist < ans[node] {
+					ans[node] = dist
+					h.addInHeap([]int{dist, node})
+				}
 			}
 		}
 	}
