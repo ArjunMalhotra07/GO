@@ -5,9 +5,9 @@ import "fmt"
 func PerformDijkstra() {
 	// ! Initialisation of Graph Vars
 	matrixGraph := &GraphMatrix{}
-
-	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2, 4}, {1, 3, 4}, {2, 3, 2}, {3, 4, 3}, {3, 5, 1}, {3, 6, 6}, {4, 6, 2}, {5, 6, 3}}, maxVerticesCount: 6} //! Weighted Graphs
-
+	//! From, To, Weight
+	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2, 4}, {1, 3, 4}, {2, 3, 2}, {3, 4, 3}, {3, 5, 1}, {3, 6, 6}, {4, 6, 2}, {5, 6, 3}}, maxVerticesCount: 6} //! Weighted Graphs
+	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2, 7}, {1, 3, 9}, {1, 6, 14}, {3, 6, 2}, {3, 2, 10}, {2, 4, 15}, {3, 4, 11}, {5, 4, 6}, {6, 5, 9}}, maxVerticesCount: 6}
 	matrixGraph.Nodes = make([][]int, exampleGraphStruct.maxVerticesCount+1)
 
 	for i := 0; i < exampleGraphStruct.maxVerticesCount+1; i++ {
@@ -18,8 +18,9 @@ func PerformDijkstra() {
 	}
 	// ! Print Graph Info
 	matrixGraph.printGraphMatrix()
-	// ! BFS and DFS of same Graph
-	fmt.Println(FindMinDistMatrix(*matrixGraph, 1))
+	// ! Finding Minimum Distance of each node from a source Vertex
+	source := 1
+	fmt.Println(FindMinDistMatrix(*matrixGraph, source))
 }
 
 func FindMinDistMatrix(g GraphMatrix, source int) []int {
@@ -32,11 +33,12 @@ func FindMinDistMatrix(g GraphMatrix, source int) []int {
 	if len(g.Nodes) == 0 {
 		return ans
 	}
-	//! Distance, Node
+	//! Adding {Distance, Node} in Min Heap
 	h.addInHeap([]int{0, source})
 	for len(h.heap) != 0 {
 		root := h.getTopElementFromHeap()
-		for node := 0; node < len(g.Nodes); node++ {
+		for node := 1; node < len(g.Nodes); node++ {
+			//! Looping through each edge and getting its weight
 			cellValue := g.Nodes[root[1]][node]
 			dist := cellValue + root[0]
 
