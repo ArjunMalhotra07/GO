@@ -8,6 +8,8 @@ func PerformDijkstra() {
 	//! From, To, Weight
 	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2, 4}, {1, 3, 4}, {2, 3, 2}, {3, 4, 3}, {3, 5, 1}, {3, 6, 6}, {4, 6, 2}, {5, 6, 3}}, maxVerticesCount: 6} //! Weighted Graphs
 	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2, 7}, {1, 3, 9}, {1, 6, 14}, {3, 6, 2}, {3, 2, 10}, {2, 4, 15}, {3, 4, 11}, {5, 4, 6}, {6, 5, 9}}, maxVerticesCount: 6}
+
+	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2, 10}, {1, 3, 5}, {2, 3, -20}}, maxVerticesCount: 3}
 	matrixGraph.Nodes = make([][]int, exampleGraphStruct.maxVerticesCount+1)
 
 	for i := 0; i < exampleGraphStruct.maxVerticesCount+1; i++ {

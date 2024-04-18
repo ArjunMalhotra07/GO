@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/ArjunMalhotra07/GO/arrays"
-	"github.com/ArjunMalhotra07/GO/graphs"
+	slidingwindow "github.com/ArjunMalhotra07/GO/sliding_window"
 )
 
 func main() {
@@ -16,7 +16,8 @@ func main() {
 
 	// stacksqueues.MainFunction()
 	// trees.DoTreeOperations()
-	graphs.MainFunction()
+	// graphs.MainFunction()
+	slidingwindow.MainFunction()
 	// dp.MainFunction()
 	// graphs.MainFunction()
 }
