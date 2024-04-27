@@ -6,7 +6,7 @@ import (
 )
 
 func FindLongestSubArray() {
-	arr := []int{2, 5, 1, 10, 10}
+	arr := []int{2, 5, 1, 7, 10}
 	sum := 14
 	find(arr, sum)
 }
@@ -15,9 +15,9 @@ func find(arr []int, sum int) {
 	left := 0
 	right := 0
 	maxLength := 0
-	for r < len(arr) {
+	for r < len(arr) && l < len(arr) {
 		currentSum += arr[r]
-		for currentSum > sum {
+		if currentSum > sum {
 			currentSum -= arr[l]
 			l += 1
 		}
@@ -34,3 +34,21 @@ func find(arr []int, sum int) {
 	fmt.Println("left Index", left)
 	fmt.Println("Index right", right)
 }
+
+/*
+	for r < len(arr) {
+		currentSum += arr[r]
+		for currentSum > sum {
+			currentSum -= arr[l]
+			l += 1
+		}
+		if currentSum <= sum {
+			if r-l+1 > maxLength {
+				left = l
+				right = r
+				maxLength = int(math.Max(float64(r-l+1), float64(maxLength)))
+			}
+			r += 1
+		}
+	}
+*/
