@@ -11,7 +11,9 @@ var m = sync.Mutex{}
 func increment(wg *sync.WaitGroup) {
 	defer wg.Done()
 	for i := 0; i < 1000; i++ {
+		m.Lock()
 		counter++
+		m.Unlock()
 	}
 }
 

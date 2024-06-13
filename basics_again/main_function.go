@@ -5,7 +5,7 @@ func MainFunction() {
 	// Maps01Basics()
 	// CalculateTime()
 	// DataTypesMainFunction()
-	// RoutinesMainFunction()
+	RoutinesMainFunction()
 	// ChannelsMainFunction()
-	GenericsMainFunc()
+	// GenericsMainFunc()
 }
