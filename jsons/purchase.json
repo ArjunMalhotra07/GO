@@ -1,0 +1,22 @@
+[
+  {
+    "buyerName": "Alex",
+    "price": 67.89,
+    "itemBought": "Watermelon"
+  },
+  {
+    "buyerName": "Priyal",
+    "price": 100.0,
+    "itemBought": "Cabbages"
+  },
+  {
+    "buyerName": "Sunaina",
+    "price": 31.45,
+    "itemBought": "LadyFinger"
+  },
+  {
+    "buyerName": "Jatin",
+    "price": 38.9,
+    "itemBought": "Melon"
+  }
+]

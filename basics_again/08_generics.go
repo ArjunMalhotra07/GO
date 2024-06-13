@@ -14,8 +14,13 @@ type ContactInfo struct {
 	Name  string
 	Phone int
 }
+type PurchaseInformation struct {
+	BuyerName  string
+	Price      float32
+	ItemBought string
+}
 
-func loadData[T ContactInfo](jsonFilePath string) []T {
+func loadData[T ContactInfo | PurchaseInformation](jsonFilePath string) []T {
 	data, _ := ioutil.ReadFile(jsonFilePath)
 	loaded := []T{}
 	json.Unmarshal(data, &loaded)
@@ -23,6 +28,9 @@ func loadData[T ContactInfo](jsonFilePath string) []T {
 }
 
 func UnMarshalJsons() {
-	var contact = loadData("./jsons/contact.json")
+	var contact []ContactInfo = loadData[ContactInfo]("./jsons/contact.json")
+	var purchases []PurchaseInformation = loadData[PurchaseInformation]("./jsons/purchase.json")
 	fmt.Printf("\n%+v", contact)
+	fmt.Printf("\n%+v", purchases)
+
 }
