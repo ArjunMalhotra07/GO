@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func AddToArray() {
+func CalculateTime() {
 	var n int = 1000000
 	slice1 := make([]int, 0, n)
 	slice2 := []int{}

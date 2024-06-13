@@ -7,9 +7,9 @@ import (
 	"time"
 )
 
-func TestRoutines() {
-	CheckGoRoutine()
-	writeToSharedMemorySpace()
+func RoutinesMainFunction() {
+	// CheckGoRoutine()
+	WriteToSharedMemorySpace()
 }
 
 var ids = []string{"id1", "id2", "id3", "id4", "id5"}

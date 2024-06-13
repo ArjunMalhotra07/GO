@@ -15,7 +15,7 @@ func increment(wg *sync.WaitGroup) {
 	}
 }
 
-func writeToSharedMemorySpace() {
+func WriteToSharedMemorySpace() {
 	var wg sync.WaitGroup
 	for i := 0; i < 5; i++ {
 		wg.Add(1)

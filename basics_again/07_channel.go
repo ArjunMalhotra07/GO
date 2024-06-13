@@ -14,7 +14,7 @@ type Deal struct {
 	Price float32
 }
 
-func MainFunc() {
+func CheckPricesOnVariousSites() {
 	var chickenChannel = make(chan Deal)
 	var tofuChannel = make(chan Deal)
 

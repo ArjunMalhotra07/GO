@@ -2,9 +2,9 @@ package basicsagain
 
 import "fmt"
 
-func MainFunctionOfChannels() {
-	// basicChannel()
-	MainFunc()
+func ChannelsMainFunction() {
+	// BasicChannel()
+	CheckPricesOnVariousSites()
 }
 
 func BsicChannel() {

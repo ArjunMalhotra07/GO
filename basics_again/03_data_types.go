@@ -8,7 +8,7 @@ import (
 	"unicode/utf8"
 )
 
-func TestDataTypes() {
+func DataTypesMainFunction() {
 	// integerDataTypes()
 	// stringDataTypes()
 	pointerTypes()

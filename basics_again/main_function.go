@@ -1,10 +1,11 @@
 package basicsagain
 
 func MainFunction() {
-	// Maps01Basics()
 	// Arrays00Basics()
-	// AddToArray()
-	// TestDataTypes()
-	// TestRoutines()
-	MainFunctionOfChannels()
+	// Maps01Basics()
+	// CalculateTime()
+	// DataTypesMainFunction()
+	// RoutinesMainFunction()
+	// ChannelsMainFunction()
+	GenericsMainFunc()
 }
