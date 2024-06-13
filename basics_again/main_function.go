@@ -5,5 +5,6 @@ func MainFunction() {
 	// Arrays00Basics()
 	// AddToArray()
 	// TestDataTypes()
-	TestRoutines()
+	// TestRoutines()
+	MainFunctionOfChannels()
 }
