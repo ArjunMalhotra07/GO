@@ -28,8 +28,8 @@ func makeGraph(listGraph *Graph, matrixGraph *GraphMatrix) {
 	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {2, 3}, {4, 1}, {4, 3}, {5, 6}, {7, 6}, {8, 9}, {9, 10}, {11, 12}}, maxVerticesCount: 13} //!Provinces Example Graph
 	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 1}, {2, 2}, {3, 3}}, maxVerticesCount: 3} //!Provinces Example Graph
 	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 3}, {3, 4}, {3, 6}, {6, 7}, {7, 5}, {2, 5}}, maxVerticesCount: 7} //!Cycle Example Graph
-	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 4}, {4, 3}, {2, 3}}, maxVerticesCount: 4} //!Cycle Example Graph
-	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {3, 1}, {4, 2}, {4, 3}}, maxVerticesCount: 4}
+	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 4}, {4, 3}, {2, 3}}, maxVerticesCount: 4} //!Cycle Example Graph
+	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {2, 3}, {4, 2}, {3, 10}, {4, 7}, {7, 10}, {7, 11}, {1, 5}, {5, 6}, {4, 6}, {6, 8}, {8, 9}}, maxVerticesCount: 11}
 
 	matrixGraph.Nodes = make([][]int, exampleGraphStruct.maxVerticesCount+1)
 	for i := 1; i <= exampleGraphStruct.maxVerticesCount; i++ {

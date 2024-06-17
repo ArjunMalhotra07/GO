@@ -1,7 +1,7 @@
 package graphs
 
 func MainFunction() {
-	// PerformGraphsOps()
+	PerformGraphsOps()
 	// PerformDijkstra()
-	PerformBellmanFord()
+	// PerformBellmanFord()
 }
