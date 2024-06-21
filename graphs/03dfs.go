@@ -2,6 +2,12 @@ package graphs
 
 import "fmt"
 
+func PerformDFS() {
+	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 6}, {2, 3}, {2, 4}, {6, 7}, {6, 8}, {4, 5}, {7, 5}}, maxVerticesCount: 8}
+	listGraph := &Graph{}
+	listGraph.makeListGraph(*exampleGraphStruct)
+	DepthFirstSearch(listGraph)
+}
 func DepthFirstSearch(graph *Graph) {
 	if len(graph.Vertices) == 0 {
 		return
