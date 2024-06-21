@@ -12,6 +12,17 @@ type Vertex struct {
 	Neighbours []*Vertex
 }
 
+func (g *Graph) makeListGraph(exampleGraphStruct ExampleGraphStruct) {
+	// ! Adding vertices to Different Types of Graphs
+	for i := 1; i <= exampleGraphStruct.maxVerticesCount; i++ {
+		g.addVertexMethod(i)
+	}
+	//! Adding edges
+	for i := 0; i < len(exampleGraphStruct.array); i++ {
+		g.addEdge(exampleGraphStruct.array[i][0], exampleGraphStruct.array[i][1])
+	}
+}
+
 // ! Adds Vertex to the Graph
 func (g *Graph) addVertexMethod(value int) {
 	if containsVertex(g.Vertices, value) {
@@ -72,8 +83,3 @@ func (g *Graph) printGraphAdjacencyList() {
 	}
 	fmt.Println()
 }
-
-
-
-
-

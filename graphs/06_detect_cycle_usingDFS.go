@@ -1,6 +1,17 @@
 package graphs
 
-func DetectCycleUsingDFS(graph *Graph) bool {
+import "fmt"
+
+func PerformCycleDetectionUsingDFS() {
+	//!Cycle Example Graph
+	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 3}, {3, 4}, {3, 6}, {6, 7}, {7, 5}, {2, 5}}, maxVerticesCount: 7}
+	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 4}, {4, 3}, {2, 3}}, maxVerticesCount: 4} //!Cycle Example Graph
+	listGraph := &Graph{}
+	listGraph.makeListGraph(*exampleGraphStruct)
+	listGraph.printGraphAdjacencyList()
+	fmt.Println(listGraph.DetectCycleUsingDFS())
+}
+func (graph *Graph) DetectCycleUsingDFS() bool {
 	if len(graph.Vertices) == 0 {
 		return false
 	}

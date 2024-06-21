@@ -1,5 +1,16 @@
 package graphs
 
+import "fmt"
+
+func CheckNumberOfProvinces() {
+	//!Provinces Example Graph
+	matrixGraph := &GraphMatrix{}
+	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {2, 3}, {4, 5}, {5, 6}, {7, 8}}, maxVerticesCount: 8}
+	matrixGraph.makeMatrixGraph(*exampleGraphStruct)
+	matrixGraph.printGraphMatrix()
+	fmt.Println("Number of Provinces in Graph", GetNumberOfProvinces(matrixGraph.Nodes))
+
+}
 func GetNumberOfProvinces(isConnected [][]int) int {
 	ans := 0
 	length := len(isConnected)

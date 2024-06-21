@@ -2,6 +2,13 @@ package graphs
 
 import "fmt"
 
+func PerformKahnSort() {
+	directedGraph := &DirectedGraph{}
+	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {2, 3}, {4, 2}, {3, 10}, {4, 7}, {7, 10}, {7, 11}, {1, 5}, {5, 6}, {4, 6}, {6, 8}, {8, 9}}, maxVerticesCount: 11}
+	directedGraph.makeDirectedMatrixGraph(*exampleGraphStruct)
+	directedGraph.KahnAlgo()
+}
+
 func (g *DirectedGraph) KahnAlgo() {
 	indegree := make([]int, len(g.Nodes))
 	for i := 0; i < len(g.Nodes); i++ {
