@@ -1,12 +1,9 @@
 package main
 
-import (
-	"github.com/ArjunMalhotra07/GO/arrays"
-	"github.com/ArjunMalhotra07/GO/graphs"
-)
+import "github.com/ArjunMalhotra07/GO/graphs"
 
 func main() {
-	arrays.MainFunction()
+	// arrays.MainFunction()
 	// patterns.MainFunction()
 	// strings.MainFunction()
 	// basics.MainFunction()
