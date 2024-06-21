@@ -2,7 +2,13 @@ package graphs
 
 import "fmt"
 
-func  BreadthFirstSearch(graph *Graph) {
+func PerformBFS() {
+	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 6}, {2, 3}, {2, 4}, {6, 7}, {6, 8}, {4, 5}, {7, 5}}, maxVerticesCount: 8}
+	listGraph := &Graph{}
+	listGraph.makeListGraph(*exampleGraphStruct)
+	BreadthFirstSearch(listGraph)
+}
+func BreadthFirstSearch(graph *Graph) {
 	if len(graph.Vertices) == 0 {
 		fmt.Println("Empty graph")
 		return
