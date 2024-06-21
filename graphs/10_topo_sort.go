@@ -7,7 +7,7 @@ func (g *DirectedGraph) TopoLogicalSort() {
 	s := &S{}
 	visited := make([]bool, len(g.Nodes))
 	for i := 1; i < len(g.Nodes); i++ {
-		fmt.Println(i, visited[i])
+		// fmt.Println(i, visited[i])
 		if !visited[i] {
 			dfs(i, g, &visited, s)
 			s.push(i)
@@ -16,7 +16,7 @@ func (g *DirectedGraph) TopoLogicalSort() {
 	for len(s.vertices) != 0 {
 		ans = append(ans, s.pop())
 	}
-	fmt.Println(ans)
+	fmt.Println("Topological sort order", ans)
 }
 func dfs(node int, g *DirectedGraph, visited *[]bool, stack *S) {
 
@@ -25,7 +25,7 @@ func dfs(node int, g *DirectedGraph, visited *[]bool, stack *S) {
 		if g.Nodes[node][j] == 1 && !(*visited)[j] {
 			dfs(j, g, visited, stack)
 			stack.push(j)
-			fmt.Println("Pushed", j)
+			// fmt.Println("Pushed", j)
 		}
 	}
 }

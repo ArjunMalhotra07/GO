@@ -17,6 +17,7 @@ func PerformGraphsOps() {
 	// fmt.Println("Number of Provinces in Graph", GetNumberOfProvinces(matrixGraph.Nodes))
 	//! Topological Sort
 	directedGraph.TopoLogicalSort()
+	directedGraph.KahnAlgo()
 
 	//! Checking cycles using DFS and BFS of List Graph
 	// fmt.Println("Using BFS Cycle has Graph:", DetectCycleUsingBFS(listGraph))
