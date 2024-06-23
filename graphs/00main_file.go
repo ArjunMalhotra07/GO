@@ -15,5 +15,5 @@ func MainFunction() {
 	//! Min Shortest Path Algos
 	// PerformDijkstra()
 	// PerformBellmanFord()
-
+	PerformPrims()
 }
