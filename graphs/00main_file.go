@@ -11,7 +11,7 @@ func MainFunction() {
 	// PerformCycleDetectionUsingBFS()
 	// PerformCycleDetectionUsingDFS()
 	//! Count Number of Provinces in Graph
-	// CheckNumberOfProvinces()
+	CheckNumberOfProvinces()
 	//! Min Shortest Path Algos
 	// PerformDijkstra()
 	// PerformBellmanFord()
