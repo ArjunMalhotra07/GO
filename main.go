@@ -1,6 +1,6 @@
 package main
 
-import slidingwindow "github.com/ArjunMalhotra07/GO/sliding_window"
+import "github.com/ArjunMalhotra07/GO/graphs"
 
 func main() {
 	// arrays.MainFunction()
@@ -13,8 +13,8 @@ func main() {
 
 	// stacksqueues.MainFunction()
 	// trees.MainFunction()
-	// graphs.MainFunction()
-	slidingwindow.MainFunction()
+	graphs.MainFunction()
+	// slidingwindow.MainFunction()
 	// dp.MainFunction()
 	// graphs.MainFunction()
 }

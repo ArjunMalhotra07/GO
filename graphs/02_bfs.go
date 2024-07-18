@@ -4,7 +4,11 @@ import "fmt"
 
 func PerformBFS() {
 	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 6}, {2, 3}, {2, 4}, {6, 7}, {6, 8}, {4, 5}, {7, 5}}, maxVerticesCount: 8}
-	listGraph := &Graph{}
+	var g Graph = Graph{}
+	var listGraph *Graph = &g
+	/*
+		listGraph := &Graph{}
+	*/
 	listGraph.makeListGraph(*exampleGraphStruct)
 	listGraph.printGraphAdjacencyList()
 	BreadthFirstSearch(listGraph)

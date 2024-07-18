@@ -1,7 +1,7 @@
 package slidingwindow
 
 import "fmt"
-
+//! Max Sum of a fixed size window (k) in an array
 func GetMaxSum() {
 	fmt.Println(GetMax([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 3))
 }

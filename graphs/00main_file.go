@@ -5,7 +5,7 @@ func MainFunction() {
 	// PerformTopoSort()
 	// PerformKahnSort()
 	//! BFS and DFS
-	// PerformBFS()
+	PerformBFS()
 	// PerformDFS()
 	//! Checking cycles using DFS and BFS of List Graph
 	// PerformCycleDetectionUsingBFS()

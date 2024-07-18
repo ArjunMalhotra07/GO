@@ -1,7 +1,7 @@
 package slidingwindow
 
 func MainFunction() {
-	GetMaxSum()
-	// FindLongestSubArray()
+	// GetMaxSum()
+	FindLongestSubArray()
 	// ContantWindowQues()
 }

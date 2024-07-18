@@ -2,6 +2,7 @@ package basics
 
 import (
 	"fmt"
+	"strings"
 )
 
 const myConst int = 100
@@ -17,10 +18,14 @@ func Const00() {
 	fmt.Printf("%v,%T\n", a, a)
 	fmt.Printf("%v,%T\n", b, b)
 	fmt.Printf("%v,%T\n", c, c)
+	Variadic(5, "Hello", "Hey", "Harry")
+}
+func Variadic(a int, b ...string) {
+	fmt.Println(strings.Join(b, "-"))
 }
 
 func MainFunction() {
-	// Const00()
+	Const00()
 	// EnumeratedConstants01()
 	// Strings02()
 	// Arrays03()
@@ -43,5 +48,5 @@ func MainFunction() {
 	// Loops20()
 	// Loops21()
 	// Scanner22()
-	DoHashing23()
+	// DoHashing23()
 }
