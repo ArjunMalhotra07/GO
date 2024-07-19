@@ -1,6 +1,8 @@
 package main
 
-import "github.com/ArjunMalhotra07/GO/graphs"
+import (
+	"github.com/ArjunMalhotra07/GO/routines"
+)
 
 func main() {
 	// arrays.MainFunction()
@@ -13,8 +15,9 @@ func main() {
 
 	// stacksqueues.MainFunction()
 	// trees.MainFunction()
-	graphs.MainFunction()
+	// graphs.MainFunction()
 	// slidingwindow.MainFunction()
 	// dp.MainFunction()
 	// graphs.MainFunction()
+	routines.MainFunction()
 }
