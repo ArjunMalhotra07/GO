@@ -1,7 +1,9 @@
 package main
 
 import (
-	"github.com/ArjunMalhotra07/GO/routines"
+	"fmt"
+
+	"github.com/ArjunMalhotra07/GO/channels"
 )
 
 func main() {
@@ -19,5 +21,9 @@ func main() {
 	// slidingwindow.MainFunction()
 	// dp.MainFunction()
 	// graphs.MainFunction()
-	routines.MainFunction()
+	// routines.MainFunction()
+	channels.MainFunction()
+}
+func init() {
+	fmt.Println("hey")
 }

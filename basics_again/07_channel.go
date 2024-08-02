@@ -39,6 +39,8 @@ func checkPrices(websiteName string, channelName chan Deal, maxPrice float32) {
 }
 
 func sendMessage(chickenChannel, tofuChannel chan Deal) {
+	defer close(chickenChannel)
+	defer close(tofuChannel)
 	select {
 	case deal := <-chickenChannel:
 		fmt.Printf("\nFound a deal on Chicken at %s for %v\n", deal.Name, deal.Price)
