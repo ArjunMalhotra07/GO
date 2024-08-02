@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/ArjunMalhotra07/GO/channels"
+	"github.com/ArjunMalhotra07/GO/graphs"
 )
 
 func main() {
@@ -17,12 +17,12 @@ func main() {
 
 	// stacksqueues.MainFunction()
 	// trees.MainFunction()
-	// graphs.MainFunction()
+	graphs.MainFunction()
 	// slidingwindow.MainFunction()
 	// dp.MainFunction()
 	// graphs.MainFunction()
 	// routines.MainFunction()
-	channels.MainFunction()
+	// channels.MainFunction()
 }
 func init() {
 	fmt.Println("hey")
