@@ -2,13 +2,16 @@ package graphs
 
 import "fmt"
 
-func BFSMatrix() {
+func PerformBFSForMatrix() {
 	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 6}, {2, 3}, {2, 4}, {6, 7}, {6, 8}, {4, 5}, {7, 5}}, maxVerticesCount: 8}
 	graph := &GraphMatrix{}
 	graph.makeMatrixGraph(*exampleGraphStruct)
 	graph.printGraphMatrix()
+	bfsMatrix(graph.Nodes)
+}
+func bfsMatrix(graph [][]int) {
 	myQ := &q{}
-	visited := make([]bool, len(graph.Nodes))
+	visited := make([]bool, len(graph))
 	myQ.enQ(1)
 	ans := []int{}
 
@@ -17,7 +20,7 @@ func BFSMatrix() {
 		if !visited[pop] {
 			ans = append(ans, pop)
 			visited[pop] = true
-			for node, isNeighbour := range graph.Nodes[pop] {
+			for node, isNeighbour := range graph[pop] {
 				if isNeighbour == 1 && !visited[node] {
 					myQ.enQ(node)
 				}

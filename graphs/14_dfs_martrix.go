@@ -2,13 +2,16 @@ package graphs
 
 import "fmt"
 
-func DFSMatrix() {
+func PerformDFSForMatrix() {
 	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {1, 6}, {2, 3}, {2, 4}, {6, 7}, {6, 8}, {4, 5}, {7, 5}}, maxVerticesCount: 8}
 	graph := &GraphMatrix{}
 	graph.makeMatrixGraph(*exampleGraphStruct)
 	graph.printGraphMatrix()
+	dfsMatrix(graph.Nodes)
+}
+func dfsMatrix(graph [][]int) {
 	myQ := &stack{}
-	visited := make([]bool, len(graph.Nodes))
+	visited := make([]bool, len(graph))
 	myQ.push(1)
 	ans := []int{}
 
@@ -17,7 +20,7 @@ func DFSMatrix() {
 		if !visited[popped] {
 			ans = append(ans, popped)
 			visited[popped] = true
-			for node, isNeighbour := range graph.Nodes[popped] {
+			for node, isNeighbour := range graph[popped] {
 				if isNeighbour == 1 && !visited[node] {
 					myQ.push(node)
 				}

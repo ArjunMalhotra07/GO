@@ -1,15 +1,16 @@
 package graphs
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func PerformDijkstra() {
 	// ! Initialisation of Graph Vars
 	matrixGraph := &GraphMatrix{}
 	//! From, To, Weight
-	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2, 4}, {1, 3, 4}, {2, 3, 2}, {3, 4, 3}, {3, 5, 1}, {3, 6, 6}, {4, 6, 2}, {5, 6, 3}}, maxVerticesCount: 6} //! Weighted Graphs
-	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2, 7}, {1, 3, 9}, {1, 6, 14}, {3, 6, 2}, {3, 2, 10}, {2, 4, 15}, {3, 4, 11}, {5, 4, 6}, {6, 5, 9}}, maxVerticesCount: 6}
-
-	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2, 10}, {1, 3, 5}, {2, 3, -20}}, maxVerticesCount: 3}
+	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2, 4}, {1, 3, 4}, {2, 3, 2}, {3, 4, 3}, {3, 5, 1}, {3, 6, 6}, {4, 6, 2}, {5, 6, 3}}, maxVerticesCount: 6} //! Weighted Graphs
+	// exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2, 7}, {1, 3, 9}, {1, 6, 14}, {3, 6, 2}, {3, 2, 10}, {2, 4, 15}, {3, 4, 11}, {5, 4, 6}, {6, 5, 9}}, maxVerticesCount: 6}
 	matrixGraph.Nodes = make([][]int, exampleGraphStruct.maxVerticesCount+1)
 
 	for i := 0; i < exampleGraphStruct.maxVerticesCount+1; i++ {
@@ -22,19 +23,19 @@ func PerformDijkstra() {
 	matrixGraph.printGraphMatrix()
 	// ! Finding Minimum Distance of each node from a source Vertex
 	source := 1
-	fmt.Println(FindMinDistMatrix(*matrixGraph, source))
+	fmt.Println(FindMinDistMatrix(matrixGraph.Nodes, source))
 }
 
-func FindMinDistMatrix(g GraphMatrix, source int) []int {
-	ans := make([]int, len(g.Nodes))
-	isNodeAlreadyRelaxed := make([]int, len(g.Nodes))
+func FindMinDistMatrix(g [][]int, source int) []int {
+	ans := make([]int, len(g))
+	isNodeAlreadyRelaxed := make([]int, len(g))
 
 	for i := 1; i < len(ans); i++ {
-		ans[i] = 343434343434
+		ans[i] = math.MaxInt64
 	}
 	ans[source] = 0
 	h := &Heap{}
-	if len(g.Nodes) == 0 {
+	if len(g) == 0 {
 		return ans
 	}
 
@@ -45,11 +46,10 @@ func FindMinDistMatrix(g GraphMatrix, source int) []int {
 		fmt.Println("relaxed", root)
 		if isNodeAlreadyRelaxed[root[1]] == 0 {
 			isNodeAlreadyRelaxed[root[1]] = 1
-			for node := 1; node < len(g.Nodes); node++ {
+			for node := 1; node < len(g); node++ {
 				//! Looping through each edge, getting its weight & updating dist in ans array if its less than before
-				cellValue := g.Nodes[root[1]][node]
+				cellValue := g[root[1]][node]
 				dist := cellValue + root[0]
-
 				if cellValue != 0 && dist < ans[node] {
 					ans[node] = dist
 					h.addInHeap([]int{dist, node})
