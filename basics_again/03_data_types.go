@@ -10,8 +10,8 @@ import (
 
 func DataTypesMainFunction() {
 	// integerDataTypes()
-	// stringDataTypes()
-	pointerTypes()
+	stringDataTypes()
+	// pointerTypes()
 }
 func integerDataTypes() {
 	var a int8 = 127
@@ -44,7 +44,7 @@ func divide(n, d int) (int, error) {
 func stringDataTypes() {
 	var myRune rune = 'a'
 	fmt.Println(myRune)
-	me := "Arjun"
+	var me string = "Arjun"
 	length := utf8.RuneCountInString(me)
 	fmt.Println(length)
 	name2 := "résumé"
@@ -73,6 +73,7 @@ func createStringMethod1() time.Duration {
 	for i := range strSlice {
 		stringBuilder.WriteString(strSlice[i])
 	}
+	fmt.Println(stringBuilder)
 	var newString = stringBuilder.String()
 	fmt.Println(newString)
 	return time.Since(t0)

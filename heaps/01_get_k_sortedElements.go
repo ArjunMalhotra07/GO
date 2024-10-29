@@ -31,9 +31,9 @@ func (h *Minheap) insert(key int) {
 }
 
 func (h *Minheap) minHeapifyUp(index int) {
-	for h.nums[getparentIndex(index)] > h.nums[index] {
-		h.swap(getparentIndex(index), index)
-		index = getparentIndex(index)
+	for h.nums[getParentIndex(index)] > h.nums[index] {
+		h.swap(getParentIndex(index), index)
+		index = getParentIndex(index)
 	}
 }
 

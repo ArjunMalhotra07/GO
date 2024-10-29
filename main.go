@@ -3,21 +3,20 @@ package main
 import (
 	"fmt"
 
-	"github.com/ArjunMalhotra07/GO/graphs"
+	strings "github.com/ArjunMalhotra07/GO/Strings"
 )
 
 func main() {
 	// arrays.MainFunction()
 	// patterns.MainFunction()
-	// strings.MainFunction()
+	strings.MainFunction()
 	// basics.MainFunction()
 	// basicsagain.MainFunction()
 	// linkedList.MainFunction()
 	// heaps.MainFunction()
-
 	// stacksqueues.MainFunction()
 	// trees.MainFunction()
-	graphs.MainFunction()
+	// graphs.MainFunction()
 	// slidingwindow.MainFunction()
 	// dp.MainFunction()
 	// graphs.MainFunction()

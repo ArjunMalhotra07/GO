@@ -39,9 +39,9 @@ func (h *hMapHeap) insert(temp []int) {
 	h.minHeapifyUp(len(h.array) - 1)
 }
 func (h *hMapHeap) minHeapifyUp(index int) {
-	for h.array[getparentIndex(index)].sum > h.array[index].sum {
-		h.swap(getparentIndex(index), index)
-		index = getparentIndex(index)
+	for h.array[getParentIndex(index)].sum > h.array[index].sum {
+		h.swap(getParentIndex(index), index)
+		index = getParentIndex(index)
 	}
 }
 
@@ -87,14 +87,4 @@ func (h *hMapHeap) minHeapifyDown(index int) {
 		}
 
 	}
-}
-
-func getparentIndex(index int) int {
-	return (index - 1) / 2
-}
-func getLeftChildIndex(index int) int {
-	return 2*index + 1
-}
-func getRightChildIndex(index int) int {
-	return 2*index + 2
 }

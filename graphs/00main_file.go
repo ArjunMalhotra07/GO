@@ -13,9 +13,10 @@ func MainFunction() {
 	//! Count Number of Provinces in Graph
 	// CheckNumberOfProvinces()
 	//! Min Shortest Path Algos
-	PerformDijkstra()
+	// PerformDijkstra()
 	// PerformBellmanFord()
 	// PerformPrims()
 	// BFSMatrix()
 	// DFSMatrix()
+	FindShortestPath()
 }

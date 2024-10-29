@@ -3,7 +3,7 @@ package dp
 import "fmt"
 
 func FindFibonacci_01() {
-	n := 5
+	n := 95
 	slice := make([]int, n+1)
 	for i := range slice {
 		slice[i] = -1

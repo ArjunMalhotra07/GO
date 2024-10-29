@@ -10,7 +10,7 @@ func PerformBFSForMatrix() {
 	bfsMatrix(graph.Nodes)
 }
 func bfsMatrix(graph [][]int) {
-	myQ := &q{}
+	var myQ *q = &q{}
 	visited := make([]bool, len(graph))
 	myQ.enQ(1)
 	ans := []int{}
