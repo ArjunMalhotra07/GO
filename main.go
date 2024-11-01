@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 
-	strings "github.com/ArjunMalhotra07/GO/Strings"
+	"github.com/ArjunMalhotra07/GO/arrays"
 )
 
 func main() {
-	// arrays.MainFunction()
+	arrays.MainFunction()
 	// patterns.MainFunction()
-	strings.MainFunction()
+	// strings.MainFunction()
 	// basics.MainFunction()
 	// basicsagain.MainFunction()
 	// linkedList.MainFunction()

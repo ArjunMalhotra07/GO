@@ -6,7 +6,8 @@ import (
 )
 
 func DoRegularExpressions18() {
-	regexp6()
+	// regexp6()
+	fmt.Println(regexp7("1010"))
 }
 func regexp1() {
 
@@ -83,4 +84,20 @@ func regexp6() {
 		doesMatch = stringToCheck[0] == stringToCheck[len(stringToCheck)-1]
 		fmt.Printf("%s %v \n", stringToCheck, doesMatch)
 	}
+}
+
+func regexp7(s string) bool {
+	regex := regexp.MustCompile(`^[01]+$`)
+	if !regex.MatchString(s) {
+		return false
+	}
+
+	// Count zeros
+	count := 0
+	for _, ch := range s {
+		if ch == '0' {
+			count++
+		}
+	}
+	return count%2 == 0
 }
