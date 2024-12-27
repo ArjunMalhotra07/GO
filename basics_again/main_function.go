@@ -4,8 +4,9 @@ func MainFunction() {
 	// Arrays00Basics()
 	// Maps01Basics()
 	// CalculateTime()
-	DataTypesMainFunction()
+	// DataTypesMainFunction()
 	// RoutinesMainFunction()
 	// ChannelsMainFunction()
 	// GenericsMainFunc()
+	InterfacesFunc()
 }

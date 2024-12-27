@@ -3,15 +3,15 @@ package main
 import (
 	"fmt"
 
-	"github.com/ArjunMalhotra07/GO/arrays"
+	basicsagain "github.com/ArjunMalhotra07/GO/basics_again"
 )
 
 func main() {
-	arrays.MainFunction()
+	// arrays.MainFunction()
 	// patterns.MainFunction()
 	// strings.MainFunction()
 	// basics.MainFunction()
-	// basicsagain.MainFunction()
+	basicsagain.MainFunction()
 	// linkedList.MainFunction()
 	// heaps.MainFunction()
 	// stacksqueues.MainFunction()

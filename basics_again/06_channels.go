@@ -1,24 +1,38 @@
 package basicsagain
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func ChannelsMainFunction() {
-	// BasicChannel()
-	CheckPricesOnVariousSites()
+	BasicChannel()
 }
 
-func BsicChannel() {
-	var c = make(chan int)
-	go addToChannel(c)
-	for i := range c {
-		fmt.Println(i)
+func BasicChannel() {
+	var c = make(chan user)
+	go sendUsersToChannel(c)
+	for u := range c {
+		fmt.Println("Received user:", u.name)
 	}
-
 }
 
-func addToChannel(c chan int) {
-	defer close(c)
-	for i := 0; i < 5; i++ {
-		c <- i
+func sendUsersToChannel(c chan user) {
+	defer close(c) // Close channel after sending all users
+
+	users := []user{
+		{name: "Arjun"},
+		{name: "Suchitra"},
+		{name: "Ravi"},
+		{name: "Meena"},
+		{name: "Kiran"},
 	}
+
+	for _, u := range users {
+		c <- u // Send user struct to channel
+	}
+}
+
+// Struct definition
+type user struct {
+	name string
 }
