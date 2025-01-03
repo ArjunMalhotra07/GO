@@ -3,56 +3,45 @@ package graphs
 import "fmt"
 
 func PerformTopoSort() {
-	directedGraph := &DirectedGraph{}
-	exampleGraphStruct := &ExampleGraphStruct{array: [][]int{{1, 2}, {2, 3}, {4, 2}, {3, 10}, {4, 7}, {7, 10}, {7, 11}, {1, 5}, {5, 6}, {4, 6}, {6, 8}, {8, 9}}, maxVerticesCount: 11}
-	directedGraph.makeDirectedMatrixGraph(*exampleGraphStruct)
-	directedGraph.TopoLogicalSort()
-}
-func (g *DirectedGraph) TopoLogicalSort() {
-	ans := []int{}
-	s := &S{}
-	visited := make([]bool, len(g.Nodes))
-	for i := 1; i < len(g.Nodes); i++ {
-		// fmt.Println(i, visited[i])
-		if !visited[i] {
-			dfs(i, g, &visited, s)
-			s.push(i)
+	arr := [][]int{{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 0}, {0, 1, 0, 0, 0, 0}, {1, 1, 0, 0, 0, 0}, {1, 0, 1, 0, 0, 0}}
+	vis := make([]bool, len(arr))
+	
+	s := &_S{}
+	for i := 0; i < len(arr); i++ {
+		if !vis[i] {
+			s.dfs(i, arr, vis)
 		}
 	}
-	for len(s.vertices) != 0 {
-		ans = append(ans, s.pop())
+	for len(s.nums) != 0 {
+		fmt.Println(s.pop())
 	}
-	fmt.Println("Topological sort order", ans)
 }
-func dfs(node int, g *DirectedGraph, visited *[]bool, stack *S) {
-
-	(*visited)[node] = true
-	for j := 0; j < len(g.Nodes[node]); j++ {
-		if g.Nodes[node][j] == 1 && !(*visited)[j] {
-			dfs(j, g, visited, stack)
-			stack.push(j)
-			// fmt.Println("Pushed", j)
+func (s *_S) dfs(node int, graph [][]int, vis []bool) {
+	vis[node] = true
+	for i := 0; i < len(graph[node]); i++ {
+		if !vis[i] && graph[node][i] == 1 {
+			s.dfs(i, graph, vis)
 		}
 	}
+	s.push(node)
 }
 
-type S struct {
-	vertices []int
+type _S struct {
+	nums []int
 }
 
-func (s *S) push(vertex int) {
-	s.vertices = append(s.vertices, vertex)
+func (s *_S) push(i int) {
+	s.nums = append(s.nums, i)
 }
-func (s *S) pop() int {
-	length := len(s.vertices)
-	if length > 0 {
-		popped := s.vertices[length-1]
-		if length != 1 {
-			s.vertices = s.vertices[:length-1]
+func (s *_S) pop() int {
+	if len(s.nums) != 0 {
+		top := s.nums[len(s.nums)-1]
+		if len(s.nums) == 1 {
+			s.nums = []int{}
 		} else {
-			s.vertices = []int{}
+			s.nums = s.nums[:len(s.nums)-1]
 		}
-		return popped
+		return top
 	}
 	return -1
 }
