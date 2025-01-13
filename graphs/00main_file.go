@@ -2,7 +2,7 @@ package graphs
 
 func MainFunction() {
 	//! Topological Sort
-	// PerformTopoSort()
+	PerformTopoSort()
 	// PerformKahnSort()
 	//! BFS and DFS
 	// PerformBFS()
@@ -18,5 +18,5 @@ func MainFunction() {
 	// PerformPrims()
 	// BFSMatrix()
 	// DFSMatrix()
-	FindShortestPath()
+	// FindShortestPath()
 }

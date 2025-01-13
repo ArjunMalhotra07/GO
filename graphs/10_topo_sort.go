@@ -3,18 +3,23 @@ package graphs
 import "fmt"
 
 func PerformTopoSort() {
-	arr := [][]int{{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 0}, {0, 1, 0, 0, 0, 0}, {1, 1, 0, 0, 0, 0}, {1, 0, 1, 0, 0, 0}}
+	// arr := [][]int{{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 0}, {0, 1, 0, 0, 0, 0}, {1, 1, 0, 0, 0, 0}, {1, 0, 1, 0, 0, 0}} //! Non cyclic example
+	arr := [][]int{{0, 0, 0, 0, 0, 1}, {0, 0, 0, 1, 0, 0}, {0, 0, 0, 1, 0, 0}, {1, 0, 0, 0, 0, 0}, {1, 1, 0, 0, 0, 0}, {0, 0, 1, 0, 0, 0}} //! Cyclic example
+
 	vis := make([]bool, len(arr))
-	
+
 	s := &_S{}
 	for i := 0; i < len(arr); i++ {
 		if !vis[i] {
 			s.dfs(i, arr, vis)
 		}
 	}
+
+	fmt.Print("Topologoical sort order ")
 	for len(s.nums) != 0 {
-		fmt.Println(s.pop())
+		fmt.Print(s.pop(), " ")
 	}
+	fmt.Println()
 }
 func (s *_S) dfs(node int, graph [][]int, vis []bool) {
 	vis[node] = true

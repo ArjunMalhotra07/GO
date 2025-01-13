@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	basicsagain "github.com/ArjunMalhotra07/GO/basics_again"
+	"github.com/ArjunMalhotra07/GO/graphs"
 )
 
 func main() {
@@ -11,12 +11,12 @@ func main() {
 	// patterns.MainFunction()
 	// strings.MainFunction()
 	// basics.MainFunction()
-	basicsagain.MainFunction()
+	// basicsagain.MainFunction()
 	// linkedList.MainFunction()
 	// heaps.MainFunction()
 	// stacksqueues.MainFunction()
 	// trees.MainFunction()
-	// graphs.MainFunction()
+	graphs.MainFunction()
 	// slidingwindow.MainFunction()
 	// dp.MainFunction()
 	// graphs.MainFunction()
