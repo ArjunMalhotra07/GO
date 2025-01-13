@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/ArjunMalhotra07/GO/graphs"
+	"github.com/ArjunMalhotra07/GO/src/graphs"
 )
 
 func main() {
